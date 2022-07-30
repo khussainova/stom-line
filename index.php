@@ -7,7 +7,7 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $url = parse_url(getenv("CLEAR_DATABASE_URL"));
-$server = $URL["host"];
+$server = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
