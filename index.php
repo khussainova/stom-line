@@ -6,7 +6,7 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 
 $dotenv->load();
 
-$conn = mysqli_connect($_ENV['HOST'], $_ENV['USER_NAME'], '', $_ENV['DATABASE_NAME']) or die('connection failed');
+$conn = mysqli_connect($_ENV['db_host'], $_ENV['db_user'], $_ENV['db_pass'], $_ENV['db_name']) or die('database connection error');
 
 if (isset($_POST['submit'])) {
 
