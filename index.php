@@ -6,6 +6,15 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 
 $dotenv->load();
 
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$conn = new mysqli($server, $username, $password, $db);
+
 $conn = mysqli_connect($_ENV['db_host'], $_ENV['db_user'], $_ENV['db_pass'], $_ENV['db_name']) or die('database connection error');
 
 if (isset($_POST['submit'])) {
