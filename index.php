@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
     <!-- !home section -->
 
     <!-- about section -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 image">
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
     <!-- !about section -->
 
     <!-- services section -->
-    <section class="services">
+    <section class="services"id="services">
         <h1 class="heading">our services</h1>
         <div class="box-container container">
             <div class="box">
@@ -132,7 +132,7 @@ if (isset($_POST['submit'])) {
     <!-- !services section -->
 
     <!-- process section -->
-    <section class="process">
+    <section class="process" id="process">
         <h1 class="heading">work process</h1>
         <div class="box-container container">
             <div class="box">
@@ -157,7 +157,7 @@ if (isset($_POST['submit'])) {
     <!-- !process section -->
 
     <!-- reviews section -->
-    <section class="reviews">
+    <section class="reviews" id="reviews">
         <h1 class="heading">satisfied customers</h1>
         <div class="box-container container">
             <div class="box">
@@ -206,7 +206,7 @@ if (isset($_POST['submit'])) {
     <!-- !reviews section -->
 
     <!-- contact section -->
-    <section class="contact">
+    <section class="contact" id="contact">
         <h1 class="heading">make appointment</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <?php
