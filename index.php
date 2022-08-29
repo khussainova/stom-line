@@ -1,12 +1,27 @@
 <?php
 
+require_once realpath(__DIR__ . "/vendor/autoload.php");
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+
+$dotenv->load();
+
+$conn = mysqli_connect($_ENV['SERVERNAME'], $_ENV['DATABASE'], $_ENV['USERNAME'], $_ENV['PASSWORD']);
+if ($conn->connect_error) {
+    die("Connection failer: " . $conn->connect_error);
+}
+
+echo "Connected successfully";
+mysqli_close($conn);
 
 if (isset($_POST['submit'])) {
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $number = $_POST['number'];
-    $date = $_POST['date']; 
+    $date = $_POST['date'];
 
     $insert = mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, date) VALUES('$name', '$email', '$number', '$date')") or die('query failed');
 
@@ -90,7 +105,7 @@ if (isset($_POST['submit'])) {
     <!-- !about section -->
 
     <!-- services section -->
-    <section class="services"id="services">
+    <section class="services" id="services">
         <h1 class="heading">our services</h1>
         <div class="box-container container">
             <div class="box">
