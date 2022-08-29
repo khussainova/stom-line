@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conn.php';
+// require_once 'conn.php';
 // $conn = mysqli_connect($_ENV['HOST'], $_ENV['USER'], $_ENV['PASS'], $_ENV['DB']);
 
 if (isset($_POST['submit'])) {
