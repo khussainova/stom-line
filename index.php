@@ -1,20 +1,7 @@
 <?php
 
-require_once realpath(__DIR__ . "/vendor/autoload.php");
-
-use Dotenv\Dotenv;
-
-$dotenv = Dotenv::createImmutable(__DIR__);
-
-$dotenv->load();
-
-$conn = mysqli_connect($_ENV['SERVERNAME'], $_ENV['DATABASE'], $_ENV['USERNAME'], $_ENV['PASSWORD']);
-if ($conn->connect_error) {
-    die("Connection failer: " . $conn->connect_error);
-}
-
-echo "Connected successfully";
-mysqli_close($conn);
+require_once 'conn.php';
+$conn = mysqli_connect($_ENV['HOST'], $_ENV['USER'], $_ENV['PASS'], $_ENV['DB']);
 
 if (isset($_POST['submit'])) {
 
