@@ -1,7 +1,12 @@
 <?php
 
-// require_once 'conn.php';
-// $conn = mysqli_connect($_ENV['HOST'], $_ENV['USER'], $_ENV['PASS'], $_ENV['DB']);
+require_once realpath(__DIR__ . "/vendor/autoload.php");
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+require_once 'conn.php';
+$conn = mysqli_connect($_ENV['HOST'], $_ENV['USER'], $_ENV['PASS'], $_ENV['DB']);
 
 if (isset($_POST['submit'])) {
 
